@@ -6,6 +6,7 @@ public class Group {
     private ArrayList<Student> students;
     private String name;
 
+    //create GroupReader and read students
     private void deleteStudent() {
 
     }
