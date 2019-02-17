@@ -73,6 +73,8 @@ public class MainView extends VBox {
         teLaatBttn = new Button("Te Laat");
         raadtStudBttn = new Button("Raadt Student");
         ondervraagBttn = new Button("Ondervraag");
+        addStudentBttn = new Button("+");
+        remStudentBttn = new Button("-");
     }
 
     private void alignBttns() {
