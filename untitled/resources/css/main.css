@@ -1,0 +1,28 @@
+* {
+    -fx-lightBlue: #c0c5ce;
+    -fx-midBlue: #65737e
+}
+
+.root {
+    -fx-background-color: -fx-lightBlue;
+
+}
+
+#title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-font-family: "Roboto Black";
+    -fx-background-color: -fx-midBlue;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+    -fx-pref-width: 130px;
+    -fx-font-weight: 900;
+    -fx-font-size: 13px;
+}
+
+#iconBtn {
+    -fx-pref-width: 35px;
+}

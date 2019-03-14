@@ -1,24 +1,24 @@
 package model;
 
-import java.util.ArrayList;
-
 public abstract class Quiz {
-    private ArrayList<Student> pickedStudents;
-    private boolean isCorrect;
+    protected Student selectedStudent;
+    protected boolean isCorrect;
 
-    private void start() {
-
+    public Quiz(Student s) {
+        this.selectedStudent = s;
     }
 
-    private void checkAnswer() {
+    //abstract void checkAnswer();
 
+    public Student getSelectedStudent() {
+        return selectedStudent;
     }
 
-    private void selectStudent() {
-
+    public boolean isCorrect() {
+        return isCorrect;
     }
 
-    private void removeSeelectedStudent() {
-
+    public void setCorrect(boolean correct) {
+        isCorrect = correct;
     }
 }

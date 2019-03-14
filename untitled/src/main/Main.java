@@ -3,17 +3,13 @@ package main;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view.group.GroupView;
-import view.guessStudent.GuessStudentView;
-import view.interrogation.InterrogationView;
 import view.main.MainView;
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
-        //MainView main = new MainView();
-        GuessStudentView v = new GuessStudentView("test.png");
-        Scene scene = new Scene(v);
+        MainView main = new MainView();
+        Scene scene = new Scene(main);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Student Tracker");
         primaryStage.setResizable(false);

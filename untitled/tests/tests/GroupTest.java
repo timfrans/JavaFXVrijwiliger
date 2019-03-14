@@ -1,18 +1,27 @@
 package tests;
 
-import model.Group;
-import model.Student;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
 public class GroupTest {
-    @Test
+    /*@Test
     public void testPickStudent() {
-        Group g = new Group();
+        Group g = new FileManager().createGroup();
 
-        Student lowest = g.pickStudent();
+        Student lowest = g.pickStudents();
 
-        assertEquals(3, lowest.getScore());
+        assertEquals(2, lowest.scoreProperty().get());
     }
+
+    @Test
+    public void testDeleteStudent() {
+        Group g = new FileManager().createGroup();
+
+        try{
+            Method m = Group.class.getDeclaredMethod("deleteStudent", Student.class);
+            m.setAccessible(true);
+            m.invoke(g, g.pickStudents());
+        } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+
+        }
+
+        assertEquals(1, g.getStudents().size());
+    }*/
 }

@@ -9,36 +9,37 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import model.Student;
 
 public class GuessStudentView extends BorderPane {
     private ImageView imgV;
+    TextField txtFirstName;
+    TextField txtLastName;
+    Button btnCheck;
 
-    private VBox formBox;
-    private HBox txtFieldBox;
-    private TextField txtFirstName;
-    private TextField txtLastName;
-
-    private Button checkBttn;
-    private HBox bttnBox;
-
-    public GuessStudentView(String url) {
-        initializeNodes(url);
+    public GuessStudentView(Student s) {
+        initializeNodes(s);
 
         alignNodes();
+
+        this.getStylesheets().add("css/main.css");
     }
 
-    private void initializeNodes(String url) {
-        Image img = new Image(url);
+    private void initializeNodes(Student s) {
+        Image img = new Image(s.getImgUrl());
         imgV = new ImageView(img);
 
-        txtFirstName = new TextField("Voornaam");
-        txtLastName = new TextField("Ahternaam");
-        txtFieldBox = new HBox(40, txtFirstName, txtLastName);
+        txtFirstName = new TextField("First name");
+        txtLastName = new TextField("Last name");
+        HBox txtFieldBox = new HBox(40, txtFirstName, txtLastName);
+        txtFieldBox.setAlignment(Pos.CENTER);
 
-        checkBttn = new Button("Controleer");
-        bttnBox = new HBox(checkBttn);
+        btnCheck = new Button("CHECK");
+        HBox bttnBox = new HBox(btnCheck);
+        bttnBox.setAlignment(Pos.CENTER);
 
-        formBox = new VBox(10, txtFieldBox, bttnBox);
+        VBox formBox = new VBox(10, txtFieldBox, bttnBox);
+        this.setBottom(formBox);
     }
 
     private void alignNodes() {
@@ -46,10 +47,10 @@ public class GuessStudentView extends BorderPane {
         this.setMargin(imgV, new Insets(0,0,10,0));
 
         this.setPadding(new Insets(10));
-        checkBttn.setPadding(new Insets(10, 20, 10, 20));
+        btnCheck.setPadding(new Insets(10, 20, 10, 20));
+    }
 
-        this.setBottom(formBox);
-        txtFieldBox.setAlignment(Pos.CENTER);
-        bttnBox.setAlignment(Pos.CENTER);
+    void changeBgColor(String c) {
+        this.setStyle("-fx-background-color: " + c);
     }
 }
